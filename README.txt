@@ -9,19 +9,23 @@ EMPFOHLEN (für Teilen-Button auf dem Death-Screen):
   Dann im Browser: http://localhost:8000/
   (Benötigt Python — die meisten Windows-Rechner haben das schon.)
 
-ONLINE STELLEN (GitHub Pages / Netlify / Vercel / S3 / etc.):
-  Lade einfach index.html in dein Hosting hoch. Mehr ist nicht nötig —
-  alles ist inline (Code, Styles). Tone.js und Google Fonts kommen vom
-  CDN; bei Ausfall fällt das Spiel automatisch auf System-Fonts und
-  Stumm-Modus zurück. Auch der KSC-Spielstand kommt von einem
-  öffentlichen API; bei CORS-Block bleibt der Schal-Pip einfach grau.
+ONLINE STELLEN:
+  Live: https://www.shwape.de/
 
-  Auf GitHub Pages MUSS die Datei "index.html" heißen (nicht
-  shvape.html), sonst zeigt GitHub einen 404 für die Root-URL.
+  Das Spiel ist statisch: index.html plus die Icon-/Preview-Dateien reichen.
+  Tone.js und Google Fonts kommen vom CDN; bei Ausfall fällt das Spiel
+  automatisch auf System-Fonts und Stumm-Modus zurück. Der KSC-Spielstand
+  kommt von einem öffentlichen API; bei CORS-Block bleibt der Schal-Pip grau.
+
+  index.html ist die kanonische Datei. shvape.html ist nur noch eine
+  Weiterleitung, damit alte Links nicht auf einer zweiten Spielkopie landen.
+  Die Repo-CNAME-Datei zeigt auf www.shwape.de; die geparkte Schreibweise
+  schwape.de ist nicht das Deployment-Ziel.
 
 DATEIEN (alle ins Hosting hochladen, nebeneinander):
-  index.html               Spiel (gleiches wie shvape.html)
-  shvape.html              Spiel (alternativer Dateiname)
+  index.html               Spiel (kanonische Datei)
+  shvape.html              Kurze Weiterleitung auf index.html; verhindert zwei
+                             auseinanderlaufende Spielkopien
   favicon.svg              Vape-Pen mit "AY"-Wolke (Browser-Tab)
   favicon.png              PNG-Fallback für alte Browser
   apple-touch-icon.png     iOS-Bookmarks (180x180)
